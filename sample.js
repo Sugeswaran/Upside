@@ -3,11 +3,10 @@ var app = express();
 var mysql=require('mysql');
 var nodemailer = require('nodemailer');
 var path=require('path');
-//app.use(express.static(__dirname + '../public'));
 app.use('/static', express.static(path.join(__dirname, 'static')))
 var bodyparser=require('body-parser');
 var jwt=require('jsonwebtoken');
-var bcrypt = require('bcrypt');
+var bcrypt = require('bcrypt');	
 app.set('view engine', 'pug');
 app.set('views','./views');
 var crypto = require('crypto'),
@@ -19,12 +18,14 @@ app.use(bodyparser.json());
 app.use(function(req, res, next) {
   res.set('Cache-Control', 'no-cache, private, no-store, must-revalidate, max-stale=0, post-check=0, pre-check=0');
   next();
-});
+}); 
+
+
 var con = mysql.createPool({
   host: "127.0.0.1",
   user: "root",
   password: "",
-  database: "upside",
+  database: "upside",             //database name
   connectionLimit: 100
 });
 
@@ -56,27 +57,23 @@ function encrypt(text){
   return crypted;
 }
 var epass=encrypt(password);
-//var depass=decrypt(epass);
-	//console.log(epass);
 	
 	var sql="INSERT INTO entry VALUES('','"+first_name+"','"+last_name+"','"+hash+"','"+mail_id+"','"+mobile+"','"+epass+"','')";
 	con.query(sql,function(err,result){
 		if(err) throw err;
-		console.log("Number of records inserted: " + result.affectedRows);
+		
 	});
 	 res.sendFile( __dirname + "/" + "login.html" );
 })
 
 app.get('/dash',function(req,res){	
 
-console.log(mailid);
+
 if(global.mailid==undefined){
 	 res.sendFile( __dirname + "/" + "login.html" );
 }
 else{
 var mail=global.mailid;
-//var mail=req.params.mail;
-//global.mailid=mail;
 
 var sqln="SELECT * FROM entry WHERE Mail_id='"+mail+"'";
 con.query(sqln,function(err,result){
@@ -101,6 +98,7 @@ con.query(sqln,function(err,result){
 	});	
 }
 })
+
 app.post('/forgot',function(req,res){
 	res.render('forgot');
 })
@@ -111,7 +109,6 @@ else
 	res.redirect( "/login.html" );
 })
 app.post('/forgot_pass',urlencodedParser,function(req,res){
-	//console.log("qwe");
 	response={
 		Fmail: req.body.mail_id,
 	};
@@ -130,17 +127,16 @@ app.post('/forgot_pass',urlencodedParser,function(req,res){
   dec += decipher.final('utf8');
   return dec;
 }
-console.log(Gname);
-console.log(encryptkey);
+
+
 var depass=decrypt(encryptkey);
 var sqlde="UPDATE entry SET Decrypted='"+depass+"' WHERE Mail_id='"+forgotmail+"'";
 con.query(sqlde,function(err,fun){
 	if(err) throw err;
-	else
-		console.log("Number of records inserted: " + result.affectedRows);
+	
 });
 
-console.log(depass);
+
 var sender=nodemailer.createTransport({
 		service: 'gmail',
 		auth:{
@@ -156,7 +152,7 @@ var sender=nodemailer.createTransport({
 	};
 	sender.sendMail(send,function(error,info){
 		if(error){
-			console.log(error);
+			throw error
 		}
 		else{
 			console.log('Email sent: ' + info.response);
@@ -176,9 +172,9 @@ app.post('/logout',function(req,res){
 var sqll="DELETE FROM token WHERE Mail_id='"+mailid+"'";
 con.query(sqll,function(err,result){
 	if(err)throw err;
-	console.log("No of rows deleted"+result.affectedRows);
+	
 	global.mailid=undefined;
-	console.log(req);
+	
 	 res.redirect( "/login.html" );
 	})
 });
@@ -207,11 +203,11 @@ app.post('/logon',urlencodedParser,function(req,res){
 	};
 	var user=response.ui;
 	var passw=response.passwrd;
-	console.log(user+passw);
+	
 var sql="SELECT * FROM entry WHERE Mail_id='"+user+"' OR Mobile='"+user+"' ";
 con.query(sql,function(err,result){
 	if(err) 
-	{console.log(err);}
+	{throw err}
 	else
 	{
 		if(result.length>0){
@@ -232,7 +228,7 @@ con.query(sql,function(err,result){
 				var sqlt="INSERT INTO token VALUES('','"+token+"','"+person.Mail_id+"')";
 				con.query(sqlt,function(err,result){
 					if(err) throw(err);
-					console.log("Number of records inserted: " + result.affectedRows);
+					
 					//var mail=req.params.mail;
 					global.mailid=person.Mail_id;
 					res.redirect("/dash");
@@ -242,7 +238,7 @@ con.query(sql,function(err,result){
 			else{
 				first=person.Fn;
 				last=person.Ln;
-				console.log(first+last);
+				
 				res.render("wrong",{"first":first,"last":last});
 			}
 			
@@ -278,7 +274,7 @@ app.post('/changep',urlencodedParser,function(req,res){
 					var sqlpass="UPDATE entry SET Password='"+hash2+"' WHERE Mail_id='"+change_mail+"'";
 					con.query(sqlpass,function(err,result){
 						if(err) throw(err);
-					console.log("Number of records inserted: " + result.affectedRows);
+					
 						res.redirect( "/login.html" );
 					});
 				}

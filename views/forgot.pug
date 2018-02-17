@@ -1,0 +1,10 @@
+html
+	head
+		link(rel='stylesheet', href='/static/css/upside.css')
+		title = "Gohanray!"
+	body
+		div.login_border
+			div.forgot_title Forgot Password
+			form(method="post",action="/forgot_pass")
+				input(type="text",pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$",placeholder="Enter your mail id",class="textbox4",name="mail_id")
+				input(type="submit",class="login_button2",value="Send")

@@ -1,0 +1,15 @@
+html
+	head
+		link(rel='stylesheet', href='/static/css/upside.css')
+		title = "Gohanray!"
+	body
+		div.login_border
+			div.Login_title LOGIN
+			div.loginas Log in as
+				span.fmail #{first+" "+last}
+			form(method="post",action="/logon")
+				input(type="text",name="userd",class="textbox",placeholder="Username")
+				input(type="password",name="pass",class="textbox4",placeholder="Password")
+				input(type="submit",class="login_button2",name=Login,value="Login")
+			form(method="post",action="/forgot")
+				input(type="submit",class="lb",name=Login,value="Forgot Password")

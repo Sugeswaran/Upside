@@ -1,0 +1,222 @@
+.user{
+	color:red;
+}
+.login_border{
+	width: 25%;
+    height: 400px;
+    margin: 80px auto 0;
+    background-color: rgba(56, 49, 49, 0.13);
+    padding: 40px;
+    border: 2px ridge rgba(238, 238, 238, 0.13);
+    border-radius: 5px;
+    -moz-box-shadow: 0 -5px 10px 1px rgba(16, 16, 16, 0.57);
+	-webkit-box-shadow: 0 -5px 10px 1px rgba(16, 16, 16, 0.57);
+	box-shadow: 0 -5px 10px 1px rgba(16, 16, 16, 0.77);
+	border-bottom: none;
+}
+.signup_border{
+	width: 55%;
+    height: 400px;
+    margin: 80px auto 0;
+    background-color: rgba(56, 49, 49, 0.13);
+    padding: 40px;
+    border: 2px ridge rgba(238, 238, 238, 0.13);
+    border-radius: 5px;
+    -moz-box-shadow: 0 -5px 10px 1px rgba(16, 16, 16, 0.57);
+	-webkit-box-shadow: 0 -5px 10px 1px rgba(16, 16, 16, 0.57);
+	box-shadow: 0 -5px 10px 1px rgba(16, 16, 16, 0.77);
+	border-bottom: none;
+}
+body{
+	background-image: url("../image/238570.jpg");
+	#position: relative;
+  #opacity: 0.65;
+  background-attachment: fixed;
+  #min-height:100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  	font-family:Cabin;
+}
+::placeholder{
+	color:#c3c3c3;
+	font-size:16px;
+	padding-left:5px;
+}
+@font-face{
+	font-family:Cabin;
+	src: url("../font/Cabin-Regular.otf");
+}
+.Login_title{
+	font-size:30px;
+	color:white;
+	margin-left:130px;
+	margin-top:5px;
+}
+.signup_title{
+	font-size:30px;
+	color:white;
+	margin-left:310px;
+	margin-top:10px;
+}
+.textbox{
+	#margin-left:70px;
+	font-family:Cabin;
+	font-size:18px;
+	color:#c3c3c3;
+	border:none;
+	margin-top:50px;
+	border:1px solid none;
+	height:40px;
+	width:335px;
+	background-color:#4c628e;
+	border-radius:3px;
+}
+.textbox2{
+	margin-left:50px;
+	font-family:Cabin;
+	font-size:18px;
+	color:#c3c3c3;
+	border:none;
+	margin-top:50px;
+	float:left;
+	border:1px solid none;
+	height:40px;
+	width:335px;
+	background-color:#4c628e;
+	border-radius:3px;
+}
+
+.textbox1{
+	#padding-left:20px;
+	font-family:Cabin;
+	font-size:18px;
+	color:#c3c3c3;
+	border:none;
+	margin-top:50px;
+	border:1px solid none;
+	height:40px;
+	width:335px;
+	background-color:#4c628e;
+	border-radius:3px;
+	float:left;
+}
+input[type=text],input[type=password]{
+	padding-left:7px;
+}
+.login_button{
+	color:white;
+	cursor:pointer;
+	border:none;
+	font-size:22px;
+	font-family:Cabin;
+	margin-top:50px;
+	height:50px;
+	width:335px;
+	background-color:#51bd71;
+}
+
+.signup_button{
+	cursor:pointer;
+	color:white;
+	border:none;
+	font-size:22px;
+	font-family:Cabin;
+	margin-top:50px;
+	height:50px;
+	width:335px;
+	margin-left:200px;
+	background-color:#51bd71;
+}
+.signup{
+	color:white;
+	margin-left:84px;
+	margin-top:30px;
+	float:left;
+}
+.signup_2:hover{
+color:#51bd71;
+}	
+.signup_2{
+	margin-top:28px;
+	font-family:Cabin;
+	font-size:18px;
+	color:grey;
+	#margin-left:80px;
+	cursor:pointer;
+	border:none;
+	outline:none;
+	outline-style:none;
+	border-top: none;
+	border-right: none;
+	border-left: none;
+	background-color: transparent;
+
+}
+.clear{
+	clear:both;
+}
+.loginas{
+	font-size:20px;
+	color:white;
+	margin-top:40px;
+}
+.fmail{
+	margin-left:30px;
+	color:#c3c3c3;
+}
+.login_button2{
+	color:white;
+	cursor:pointer;
+	border:none;
+	font-size:22px;
+	font-family:Cabin;
+	margin-top:50px;
+	height:50px;
+	width:170px;
+	margin-left:80px;
+	-moz-box-shadow: 0 -5px 10px 1px rgba(16, 16, 16, 0.57);
+	-webkit-box-shadow: 0 -5px 10px 1px rgba(16, 16, 16, 0.57);
+	box-shadow: 0 5px 10px 1px rgba(16, 16, 16, 0.77);
+	background-color: rgba(56, 49, 49, 0.13);
+	#float:left;
+}
+
+.lb{
+	#float:left;
+	#margin-top:50px;
+	margin-left:80px;
+	color:white;
+	cursor:pointer;
+	border:none;
+	font-size:22px;
+	font-family:Cabin;
+	height:50px;
+	width:170px;
+	-moz-box-shadow: 0 -5px 10px 1px rgba(16, 16, 16, 0.57);
+	-webkit-box-shadow: 0 -5px 10px 1px rgba(16, 16, 16, 0.57);
+	box-shadow: 0 5px 10px 1px rgba(16, 16, 16, 0.77);
+	background-color: rgba(56, 49, 49, 0.13);
+	}
+.textbox4{
+	font-family:Cabin;
+	font-size:18px;
+	color:#c3c3c3;
+	border:none;
+	margin-top:50px;
+	border:1px solid none;
+	height:40px;
+	width:335px;
+	background-color:#4c628e;
+	border-radius:3px;
+}
+.forgot_title{
+	color:white;
+	font-size:30px;
+	margin-left:63px;
+}
+.change_pas{
+	color:white;
+	font-size:30px;
+	margin-left:56px;
+}

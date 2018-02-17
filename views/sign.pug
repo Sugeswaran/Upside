@@ -1,0 +1,22 @@
+html
+	head
+		title signup
+		link(rel='stylesheet', href='/static/css/upside.css')
+		script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js")
+	body
+		div.signup_border
+			div.signup_title SIGNIN
+			div.clear
+				form(method="post",action="/process")
+					input(type="text",name="first_name",pattern="[Aa-Za-zZ]",class="textbox1",placeholder="First Name")
+					input(type="text",name="last_name",pattern="[Aa-Za-zZ]",class="textbox2",placeholder="Last Name")
+					div.clear
+						input(type="password",name="pasword",class="textbox1",placeholder="Enter the password" ,pattern=".{7,10}")
+						input(type="password",name="Rpasword",class="textbox2",placeholder="Retype the password" ,pattern=".{7,10}")
+						div.clear
+							input(type="text",pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$",placeholder="Enter your mail id",class="textbox1",name="mail_id")
+							input(type="text",pattern=".{10}",placeholder="Enter the mobile number",class="textbox2", name="mobile_no")
+							div.clear
+								input(type="submit",value="Join",class="signup_button")
+								
+							

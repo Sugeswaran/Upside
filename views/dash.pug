@@ -1,0 +1,26 @@
+html
+	head
+		title = "Gohanray!"
+		link(rel='stylesheet', href='/static/css/upside1.css')
+	body
+		div.start
+			div.title_head Concordia!
+			form(method="post",action="/")
+				input(type='submit',class='next',value='Settings')
+			form(method="post",action="/logout")
+				input(type='submit',class='next1',value='Logout')
+				div.clear
+		div.about
+			div.about_title We help you,create & deliver
+			div.about_head UNIQUE BRAND VISION & VOICE
+			div.about_thing We are a software company and a community of passionate,purpose-led individuals.
+			div.about_thing2 We focus your idea into a unique vision and identity.
+			div.about_thing3 And,We're the best!
+			div.about_thing4   © 2018 Concordia!, Inc. 
+		div.your_info Your info
+		div.info_name #{fn+" "+ln}
+		div.line_border
+		div.info_mail #{mail}
+		div.info_mail Mobile: #{mobile}
+		
+		

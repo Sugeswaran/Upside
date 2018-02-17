@@ -1,0 +1,114 @@
+body{
+ margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+  	font-family:Cabin;
+}
+@font-face{
+	font-family:Cabin;
+	src: url("../font/Cabin-Regular.otf");
+}
+.start{
+	height:60px;
+	background-color:white;
+}
+.title_head{
+	float:left;
+	color:black;
+	font-size:23px;
+	#margin-top:10px;
+	margin-left:20px;
+	padding-top:17px;
+}
+.next{
+	padding-top:17px;
+	cursor:pointer;
+	border:none;
+	outline:none;
+	outline-style:none;
+	border-top: none;
+	border-right: none;
+	font-size:23px;
+	border-left: none;
+	background-color: transparent;
+	float:left;
+	margin-left:1030px;
+}
+.next1{
+	font-size:23px;
+	padding-top:17px;
+	font-size:23px;
+	cursor:pointer;
+	border:none;
+	outline:none;
+	outline-style:none;
+	border-top: none;
+	border-right: none;
+	border-left: none;
+	background-color: transparent;
+	float:left;
+	margin-left:20px;
+}
+.name{
+	font-size:23px;
+}
+.about{
+	height:275px;
+	background-color:#f0f0f0;
+}
+.about_title{
+	color:#655b5b;
+	font-size:26px;
+	margin-left:510px;
+	padding-top:20px;
+}
+.about_head{
+	margin-top:23px;
+	margin-left:543px;
+	color:#9c9c9c;
+}
+.about_thing{
+	margin-left:400px;
+	padding-top:15px;
+}
+.about_thing2{
+	margin-left:490px;
+	padding-top:12px;
+}
+.about_thing3{
+	margin-left:610px;
+	margin-top:12px;
+}
+.about_thing4{
+	margin-left:595px;
+	padding-top:50px;
+}
+.your_info{
+	font-size:25px;
+	margin-top:30px;
+	margin-left:30px;
+}
+.info_name{
+	font-size:30px;
+	margin-left:130px;
+	margin-top:20px;
+}
+.line_border{
+	border:2px solid #3ea18b;
+	height:2px;
+	width:220px;
+	margin-left:130px;
+	margin-top:10px;
+	border-bottom:none;
+	border-left:none;
+	border-right:none;
+}
+.info_mail{
+	font-size:21px;
+	margin-left:130px;
+	margin-top:20px;
+}
+.clear{
+	clear:both;
+}

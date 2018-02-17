@@ -1,0 +1,34 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<form method="post" action="/process">
+<input type="text" pattern="[Aa-Za-zZ]" name="first_name">
+<br>
+<input type="text" pattern="[Aa-Za-zZ]"class="qw" name="last_name">
+<br>
+<input type="password" pattern=".{7,10}" class="qwer" name="pasword">
+<br>
+<input type="text" name="retype_pasword" class="qwe">
+<br>
+<input type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" name="mail_id">
+<br>
+<input type="text" pattern=".{10}" name="mobile_no">
+<br>
+<input type="radio" name="gender" value="Male">Male
+<br>
+<input type="radio" name="gender" value="Female">Female
+<br>
+<input type="submit">
+</form>
+<script>
+$(document).ready(function(){
+var q;
+$(".qwe").click(function(){
+ q=$(".qwer").val();
+	alert($(".qwe".text(q)));
+});
+	
+});
+</script>
+</html>

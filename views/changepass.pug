@@ -1,0 +1,16 @@
+html
+	head
+		link(rel='stylesheet', href='/static/css/upside.css')
+		script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js")
+		title = "Gohanray!"
+	body
+		div.login_border
+			div.change_pas Change Password
+			form(method="post",action="/changep")
+				input(type="text",pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$",placeholder="Enter your mail id",class="textbox4",name="mail_id")
+				input(type="text",name="encrypt",class="textbox4",placeholder="Enter the Encrypted Id")
+				input(type="password",name="cpass",class="textbox1",id="pass_id",placeholder="Enter the password" ,pattern=".{7,10}")
+				input(type="password",name="crpass",class="textbox1",id="pass1_id",placeholder="Enter the password" ,pattern=".{7,10}")
+				input(type="submit",class="login_button2",name=Login,value="Confirm")
+		script(src='static/js/script.js')
+				

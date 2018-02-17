@@ -1,0 +1,21 @@
+<html>
+<head>
+<link rel="stylesheet" href="/static/css/upside.css">
+</head>
+<body>
+<div class="signup_border">
+<div class="signup_title">SIGNUP</div>
+<form method="post" action="/process">
+<input type="text" name="first_name" pattern="[Aa-Za-zZ]" class="textbox1" placeholder="First Name">
+<input type="text" name="last_name" pattern="[Aa-Za-zZ]" class="textbox2"  placeholder="Last Name">
+<div class="clear"></div>
+<input type="password" name="pasword" class="textbox1" placeholder="Enter the password" pattern=".{7,10}">
+<input type="password" name="Rpasword" class="textbox" placeholder="Retype the password" pattern=".{7,10}">
+<div class="clear"></div>
+<input type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"placeholder="Enter your mail id" class="textbox1" name="mail_id">
+<input type="text" pattern=".{10}" class="textbox" placeholder="Enter the mobile number" name="mobile_no">
+<input type="submit" value="Join" class="signup_button">
+</form>
+</div>
+</body>
+</html>

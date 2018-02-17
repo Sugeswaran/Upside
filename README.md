@@ -8,5 +8,5 @@ Application For Internship at SureServe
 4. Import upside.sql into your database
 5. Change databse name in sample.js file,if you changed the database file name.
 6. Navigate to the directory and run npm install
-7. Start the application using node sample.js
+7. Start the application by typing *node sample.js*
 

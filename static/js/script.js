@@ -4,9 +4,9 @@ $(document).ready(function(){
 			 var e=$("#pass_id").val();
 			var	s=$("#pass1_id").val();
 			if(e===s) {
-				alert("equal");
+				//alert("equal");
 			} else {
-				alert("Not Equal");
+				alert("Password's are Not Equal");
 			}
 	
 		});

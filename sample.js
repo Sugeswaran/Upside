@@ -148,7 +148,7 @@ var sender=nodemailer.createTransport({
 		from: 'concordia2k18@gmail.com',
 		to: forgotmail,
 		subject: 'password',
-		text: encryptkey
+		text: "The encrypted key:"+encryptkey
 	};
 	sender.sendMail(send,function(error,info){
 		if(error){
@@ -219,17 +219,15 @@ con.query(sql,function(err,result){
 				'Password':result[0].Password,
 				'Mail_id':result[0].Mail_id
 			}
-			//var wrong_mail=peson.Mail_id;
 			if(bcrypt.compareSync(passw,person.Password)){
 				
 				var jwt_id=result[0].id;
 				var token=jwt.sign({id:jwt_id,Mail_id:result[0].Mail_id,Fname:result[0].First_name},"Upside_Down");
 				
-				var sqlt="INSERT INTO token VALUES('','"+token+"','"+person.Mail_id+"')";
+				var sqlt="INSERT INTO token VALUES('','"+token+"','"+result[0].Mail_id+"')";
 				con.query(sqlt,function(err,result){
 					if(err) throw(err);
 					
-					//var mail=req.params.mail;
 					global.mailid=person.Mail_id;
 					res.redirect("/dash");
 					
